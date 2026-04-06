@@ -113,7 +113,7 @@ export default function Hero() {
           <div className="flex gap-8 mt-2">
             <a
               href="/AriannaCamara_curriculum.pdf"
-              download="CV_Arinna_Camara.pdf"
+              download="Curriculum.pdf"
               className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f40eb2] text-white
                         transition-all duration-300 ease-in-out hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
