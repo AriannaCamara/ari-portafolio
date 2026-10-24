@@ -4,7 +4,7 @@
 /* Variables globales */
 :root {
   --background: #060606;
-  --foreground: black; /* Añadí un color de texto para body */
+  --foreground: #e5e5e5; /* Texto claro sobre fondo casi negro */
 }
 
 /* Estilos globales */

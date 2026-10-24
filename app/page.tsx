@@ -1,3 +1,4 @@
+ 
 import {
   FaReact,
   FaNodeJs,
@@ -7,7 +8,7 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaGitAlt,
-  FaServer
+  FaServer,
 } from "react-icons/fa";
 
 import {
@@ -20,7 +21,6 @@ import {
   SiTypescript,
   SiTailwindcss,
   SiNextdotjs,
-  SiAstro,
   SiExpress,
   SiMongodb,
   SiMysql,
@@ -31,7 +31,7 @@ import {
 export const metadata = {
   title: "Arianna Cámara | Desarrolladora Full Stack Junior",
   description:
-    "Portfolio de Arianna Cámara, desarrolladora Full Stack Junior especializada en JavaScript, TypeScript, React, Next.js y Node.js.",
+    "Portfolio de Arianna Cámara, desarrolladora Full Stack especializada en JavaScript, TypeScript, React, Next.js y Node.js.",
 };
 
 export default function Hero() {
@@ -93,15 +93,15 @@ export default function Hero() {
         { name: "React", icon: <FaReact /> },
         { name: "JavaScript", icon: <FaJs /> },
         { name: "CSS", icon: <FaCss3Alt /> },
-        { name: "REST API", icon: <FaJs /> },
+        { name: "REST API", icon: <FaServer /> },
       ],
       link: "https://criptomoneda-ari-codigoconjuan.netlify.app/",
     },
     {
       title: "App CRUD",
       description:
-        "Aplicación web desarrollada con JavaScript que permite gestionar usuarios mediante operaciones CRUD: crear, consultar, editar y eliminar registros. El proyecto incluye consumo de una API REST, manipulación del DOM y gestión dinámica de datos.",
-      image: "/App-CRUD.png",
+        "Aplicación web desarrollada con JavaScript que permite gestionar usuarios mediante operaciones CRUD: crear, consultar, editar y eliminar registros. Incluye consumo de una API REST, manipulación del DOM y gestión dinámica de datos.",
+      image: "/App-CRUD.PNG",
       tags: [
         { name: "JavaScript", icon: <FaJs /> },
         { name: "HTML", icon: <FaHtml5 /> },
@@ -163,69 +163,79 @@ export default function Hero() {
     },
   ];
 
+  const meetiImages = [
+    {
+      src: "/MeetiPerfil.PNG",
+      alt: "Pantalla principal de Meeti Next",
+      label: "Perfil en meetis",
+    },
+    {
+      src: "/meetiIA.PNG",
+      alt: "Asistente de inteligencia artificial de Meeti Next",
+      label: "Asistente con IA",
+    },
+    {
+      src: "/meetiMapa.PNG",
+      alt: "Mapa de eventos de Meeti Next",
+      label: "Eventos y mapas",
+    },
+  ];
+
   return (
     <>
       {/* Hero */}
-      <section className="flex items-start p-6 mt-9 gap-6">
+      <section className="mt-9 flex flex-col items-center gap-8 p-6 md:flex-row md:items-start md:gap-6">
         {/* Columna de foto */}
-        <div className="w-2/5 flex flex-col items-center gap-4">
+        <div className="flex w-full flex-col items-center gap-4 md:w-2/5">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-[#ff31ce] blur-xl opacity-70"></div>
-
-            <div className="p-1 rounded-full bg-linear-to-r from-[#ff31ce] via-pink-500 to-purple-500">
+            <div className="absolute inset-0 rounded-full bg-[#ff31ce] opacity-70 blur-xl" />
+            <div className="rounded-full bg-gradient-to-r from-[#ff31ce] via-pink-500 to-purple-500 p-1">
               <img
                 src="/perfil.jpg"
                 alt="Foto de Arianna Cámara"
-                className="w-48 h-48 rounded-full object-cover relative z-10"
+                className="relative z-10 h-48 w-48 rounded-full object-cover"
               />
             </div>
           </div>
 
-          <div className="flex items-center text-white text-sm md:text-base mt-2">
+          <div className="mt-2 flex items-center text-sm text-white md:text-base">
             <HiLocationMarker className="mr-1 text-[#f40eb2]" />
             Madrid, España
           </div>
 
           <a
             href="mailto:ariannaisabel795@gmail.com"
-            className="mt-2 group flex items-center gap-1 bg-white/70 px-3 py-1 rounded-full text-sm md:text-base
-                      transition-all duration-300 ease-in-out
-                      hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2]"
+            className="group mt-2 flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] md:text-base"
           >
-            <HiOutlineMail className="text-[#f40eb2] text-base md:text-lg group-hover:text-white" />
-            ariannaisabel795@gmail.com
+            <HiOutlineMail className="text-base text-[#f40eb2] group-hover:text-white md:text-lg" />
+            <span className="break-all">ariannaisabel795@gmail.com</span>
           </a>
 
-          {/* Botones CV, LinkedIn, GitHub */}
-          <div className="flex gap-8 mt-2">
+          {/* Botones CV, LinkedIn y GitHub */}
+          <div className="mt-2 flex gap-8">
             <a
               href="/Curriculum.pdf"
               download="AriannaCamara_CV.pdf"
               aria-label="Descargar curriculum"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f40eb2] text-white
-                        transition-all duration-300 ease-in-out hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <HiOutlineDownload className="text-lg md:text-xl" />
             </a>
-
             <a
               href="https://www.linkedin.com/in/arianna-camara-65238a2a5"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn de Arianna Cámara"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f40eb2] text-white
-                        transition-all duration-300 ease-in-out hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <FaLinkedinIn className="text-lg md:text-xl" />
             </a>
-
             <a
               href="https://github.com/AriannaCamara?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub de Arianna Cámara"
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#f40eb2] text-white
-                        transition-all duration-300 ease-in-out hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <FaGithub className="text-lg md:text-xl" />
             </a>
@@ -233,32 +243,32 @@ export default function Hero() {
         </div>
 
         {/* Columna de texto */}
-        <div className="w-3/5 flex flex-col gap-6">
-          <h1 className="text-4xl mb-2 font-bold text-white w-full max-w-150">
-            <span className="drop-shadow-[0_0_10px_#f40eb2]">
-              Hola, soy
-            </span>{" "}
-            <span className="text-[#f40eb2] text-6xl">Arianna</span>
+        <div className="flex w-full flex-col gap-6 md:w-3/5">
+          <h1 className="mb-2 w-full text-4xl font-bold text-white md:text-5xl">
+            <span className="drop-shadow-[0_0_10px_#f40eb2]">Hola, soy</span>{" "}
+            <span className="text-5xl text-[#f40eb2] md:text-6xl">Arianna</span>
           </h1>
 
-          <div className="mt-4 relative rounded-2xl p-0.5 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-600 w-full max-w-150">
-            <div className="absolute inset-0 rounded-2xl blur-md opacity-70 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-600"></div>
-
-            <div className="relative bg-gray-900 rounded-2xl p-6 w-full">
-              <p className="text-xl text-white leading-snug text-justify mb-1">
-                Desarrolladora Full Stack Junior con formación en Desarrollo de Aplicaciones Web y experiencia práctica en el desarrollo de aplicaciones con JavaScript, TypeScript, React, Next.js y Node.js. He trabajado con APIs REST, autenticación, bases de datos, gestión de estado, testing y diferentes arquitecturas, desarrollando proyectos tanto frontend como full stack.  
+          <div className="relative mt-4 w-full max-w-150 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-600 p-0.5">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-600 opacity-70 blur-md" />
+            <div className="relative w-full rounded-2xl bg-gray-900 p-6">
+              <p className="mb-1 text-justify text-lg leading-snug text-white md:text-xl">
+                Desarrolladora Full Stack con formación en Desarrollo de
+                Aplicaciones Web y experiencia práctica en el desarrollo de
+                aplicaciones con JavaScript, TypeScript, React, Next.js y
+                Node.js. He trabajado con APIs REST, autenticación, bases de
+                datos, gestión de estado, testing y diferentes arquitecturas,
+                desarrollando proyectos tanto frontend como full stack.
               </p>
             </div>
           </div>
 
           {/* Skills */}
-          <div className="mt-9 flex flex-wrap gap-3 w-full max-w-150">
+          <div className="mt-3 flex w-full max-w-150 flex-wrap gap-3">
             {skills.map((skill) => (
               <div
                 key={skill.name}
-                className="flex items-center gap-1 bg-white/70 px-3 py-1 rounded-full text-sm md:text-base
-                          transition-all duration-300 ease-in-out
-                          hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2]"
+                className="flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] md:text-base"
               >
                 {skill.icon}
                 {skill.name}
@@ -269,55 +279,165 @@ export default function Hero() {
       </section>
 
       {/* Separador neón */}
-      <div
-        className="w-full h-1 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-500
-                      rounded-full mt-6 mb-0
-                      shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]"
-      ></div>
+      <div className="mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
 
-      {/* Proyectos */}
-      <section className="py-16 px-8 md:px-16 lg:px-20">
-        <h1 className="text-4xl font-bold text-white w-full max-w-150 mx-auto mb-12 text-center drop-shadow-[0_0_10px_#f40eb2]">
-          Proyectos
-        </h1>
+      {/* Proyectos destacados */}
+      <section className="px-5 py-16 md:px-10 lg:px-16">
+        <h2 className="mb-4 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2] md:text-5xl">
+          Proyecto destacado
+        </h2>
+        <p className="mx-auto mb-12 max-w-3xl text-center text-base text-gray-300 md:text-lg">
+          Meeti Next · Una plataforma full stack para descubrir comunidades,
+          organizar eventos y conectar personas, con notificaciones en tiempo
+          real y un asistente de inteligencia artificial.
+        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="relative mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-[#f40eb2] via-purple-500 to-blue-500 p-0.5 transition-transform duration-500 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f40eb2] via-purple-500 to-blue-500 opacity-50 blur-xl" />
+          <div className="relative overflow-hidden rounded-3xl bg-gray-950">
+            <div className="grid items-center gap-8 p-5 md:p-8 lg:grid-cols-5 lg:p-10">
+              <div className="lg:col-span-3">
+                <div className="mb-4 inline-flex rounded-full border border-pink-400/40 bg-pink-500/10 px-3 py-1 text-sm font-semibold text-pink-300">
+                  Full Stack · Proyecto principal
+                </div>
+                <h3 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+                  Meeti <span className="text-[#f40eb2]">Next</span>
+                </h3>
+                <p className="mb-5 leading-relaxed text-gray-300">
+                  Aplicación full stack donde las personas pueden crear
+                  comunidades, publicar meetis, apuntarse a eventos y descubrir
+                  actividades presenciales o virtuales. Incluye autenticación
+                  completa, notificaciones en tiempo real y un asistente de IA
+                  capaz de ayudar a encontrar comunidades y eventos.
+                </p>
+
+                <div className="mb-6 flex flex-wrap gap-2">
+                  {[
+                    "Next.js",
+                    "React",
+                    "TypeScript",
+                    "PostgreSQL",
+                    "Drizzle ORM",
+                    "Better Auth",
+                    "Vercel AI SDK",
+                    "Tailwind CSS",
+                    "Pusher",
+                  ].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <ul className="mb-7 space-y-2 text-sm leading-relaxed text-gray-300 md:text-base">
+                  <li>✦ Registro, verificación de email y gestión de sesiones.</li>
+                  <li>✦ Creación y gestión de comunidades y eventos.</li>
+                  <li>✦ Mapas, geolocalización y listado de asistentes.</li>
+                  <li>✦ Notificaciones en tiempo real y asistente de IA.</li>
+                  <li>✦ Arquitectura organizada por funcionalidades y validación con Zod.</li>
+                </ul>
+
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="https://meeti-next.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full bg-[#f40eb2] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_14px_#f40eb2]"
+                  >
+                    Ver demo ↗
+                  </a>
+                  <a
+                    href="https://github.com/AriannaCamara/meeti-next"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-[#f40eb2] hover:text-[#f40eb2]"
+                  >
+                    <FaGithub /> Ver código
+                  </a>
+                </div>
+              </div>
+
+              <div className="lg:col-span-2">
+                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gray-900 shadow-2xl shadow-purple-950/40">
+                  <img
+                    src="/meeti.PNG"
+                    alt="Captura principal de Meeti Next"
+                    className="aspect-[4/3] w-full object-cover object-top"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent p-5 pt-12">
+                    <p className="text-lg font-semibold text-white">
+                      Comunidades que conectan
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      Descubre, crea y participa en meetis.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Galería de tres capturas */}
+            <div className="grid grid-cols-1 gap-4 border-t border-white/10 p-5 md:grid-cols-3 md:p-8">
+              {meetiImages.map((image) => (
+                <figure
+                  key={image.src}
+                  className="group overflow-hidden rounded-2xl border border-white/10 bg-gray-900 transition-all duration-300 hover:border-[#f40eb2]/70 hover:shadow-[0_0_18px_rgba(244,14,178,0.15)]"
+                >
+                  <div className="overflow-hidden">
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="aspect-video w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <figcaption className="px-4 py-3 text-sm font-medium text-gray-200">
+                    {image.label}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Otros proyectos */}
+      <section className="px-8 py-16 md:px-16 lg:px-20">
+        <h2 className="mb-12 w-full text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
+          Otros proyectos
+        </h2>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
             <div
-              key={index}
-              className="relative max-w-sm mx-auto rounded-2xl p-0.5
-                        bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-500
-                        group
-                        transition-all duration-500 ease-in-out
-                        hover:-translate-y-2 hover:scale-[1.02]"
+              key={project.title}
+              className="group relative mx-auto max-w-sm rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 p-0.5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
             >
-              <div className="absolute inset-0 rounded-2xl blur-md opacity-60 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-500"></div>
-
-              <div className="relative bg-gray-900 rounded-2xl flex flex-col h-full overflow-visible">
-                <div className="w-full h-64 overflow-hidden rounded-t-2xl">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 opacity-60 blur-md" />
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-gray-900">
+                <div className="h-64 w-full overflow-hidden">
                   <img
                     src={project.image}
                     alt={`Captura del proyecto ${project.title}`}
-                    className="w-full h-full object-cover rounded-t-2xl
-                              transition-transform duration-500 ease-in-out
-                              group-hover:scale-110"
+                    className="h-full w-full rounded-t-2xl object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
 
-                <div className="p-4 flex-1 flex flex-col">
-                  <h2 className="text-lg font-semibold text-[#f40eb2] mb-2 text-center">
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="mb-2 text-center text-lg font-semibold text-[#f40eb2]">
                     {project.title}
-                  </h2>
-
-                  <p className="text-white text-sm mb-3 line-clamp-4 text-center leading-tight">
+                  </h3>
+                  <p className="mb-3 line-clamp-4 text-center text-sm leading-tight text-white">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mb-3 justify-center">
+                  <div className="mb-3 flex flex-wrap justify-center gap-2">
                     {project.tags.map((tag) => (
                       <div
                         key={tag.name}
-                        className="flex items-center gap-1 bg-white/70 px-3 py-1 rounded-full text-sm transition-all duration-300 ease-in-out hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_6px_#f40eb2]"
+                        className="flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_6px_#f40eb2]"
                       >
                         {tag.icon}
                         {tag.name}
@@ -329,7 +449,7 @@ export default function Hero() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-auto w-full bg-[#f40eb2] text-white px-3 py-2 rounded-full text-center text-sm transition-all duration-300 ease-in-out hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_8px_#f40eb2]"
+                    className="mt-auto w-full rounded-full bg-[#f40eb2] px-3 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_8px_#f40eb2]"
                   >
                     Ver proyecto
                   </a>
@@ -341,44 +461,32 @@ export default function Hero() {
       </section>
 
       {/* Separador neón */}
-      <div
-        className="w-full h-1 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-500
-                      rounded-full mt-6 mb-6
-                      shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]"
-      ></div>
+      <div className="mb-6 mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
 
       {/* Tecnologías */}
-      <section className="py-10 px-6">
-        <h2 className="text-4xl font-bold text-white mb-16 text-center drop-shadow-[0_0_10px_#f40eb2]">
+      <section className="px-6 py-10">
+        <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
           Tecnologías
         </h2>
 
-        {/* Fila 1 */}
-        <div className="flex justify-center gap-8 mb-6 flex-wrap">
-          {techs.slice(0, 7).map((tech, index) => (
+        <div className="mb-6 flex flex-wrap justify-center gap-8">
+          {techs.slice(0, 7).map((tech) => (
             <div
-              key={index}
+              key={tech.name}
               title={tech.name}
-              className="flex items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-white
-                        shadow-[0_0_10px_#fff] text-[#f40eb2]
-                        transition-all duration-300 ease-in-out
-                        hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] cursor-pointer"
+              className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-white text-[#f40eb2] shadow-[0_0_10px_#fff] transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2]"
             >
               <div className="text-3xl">{tech.icon}</div>
             </div>
           ))}
         </div>
 
-        {/* Fila 2 */}
-        <div className="flex justify-center gap-8 flex-wrap">
-          {techs.slice(7).map((tech, index) => (
+        <div className="flex flex-wrap justify-center gap-8">
+          {techs.slice(7).map((tech) => (
             <div
-              key={index}
+              key={tech.name}
               title={tech.name}
-              className="flex items-center justify-center w-20 h-20 rounded-full bg-white border-2 border-white
-                        shadow-[0_0_10px_#fff] text-[#f40eb2]
-                        transition-all duration-300 ease-in-out
-                        hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] cursor-pointer"
+              className="flex h-20 w-20 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-white text-[#f40eb2] shadow-[0_0_10px_#fff] transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2]"
             >
               <div className="text-3xl">{tech.icon}</div>
             </div>
@@ -387,40 +495,26 @@ export default function Hero() {
       </section>
 
       {/* Formación */}
-      <section className="py-16 px-6 md:px-12 lg:px-20">
-        <h2 className="text-4xl font-bold text-center text-white mb-16 drop-shadow-[0_0_10px_#f40eb2]">
+      <section className="px-6 py-16 md:px-12 lg:px-20">
+        <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
           Formación
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 gap-x-16 max-w-5xl mx-auto">
-          {studies.map((estudio, index) => (
-            <div key={index} className="group">
-              <h3
-                className="text-xl md:text-xl font-semibold text-white
-                          transition-all duration-300
-                          group-hover:text-[#f40eb2]
-                          group-hover:drop-shadow-[0_0_6px_#f40eb2]"
-              >
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
+          {studies.map((estudio) => (
+            <div key={estudio.title} className="group">
+              <h3 className="text-xl font-semibold text-white transition-all duration-300 group-hover:text-[#f40eb2] group-hover:drop-shadow-[0_0_6px_#f40eb2]">
                 {estudio.title}
               </h3>
-
-              <p className="text-gray-300 mt-1">{estudio.subtitle}</p>
-
-              <div
-                className="h-0.5 w-16 bg-[#f40eb2] mt-2
-                            shadow-[0_0_8px_#f40eb2]"
-              ></div>
+              <p className="mt-1 text-gray-300">{estudio.subtitle}</p>
+              <div className="mt-2 h-0.5 w-16 bg-[#f40eb2] shadow-[0_0_8px_#f40eb2]" />
             </div>
           ))}
         </div>
       </section>
 
       {/* Separador final */}
-      <div
-        className="w-full h-1 bg-linear-to-r from-[#f40eb2] via-pink-500 to-purple-500
-                      rounded-full mt-6 mb-0
-                      shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]"
-      ></div>
+      <div className="mb-0 mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
     </>
   );
 }
