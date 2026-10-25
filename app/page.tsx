@@ -19,8 +19,8 @@ import {
 
 import {
   SiTypescript,
-  SiTailwindcss,
   SiNextdotjs,
+  SiNestjs,
   SiExpress,
   SiMongodb,
   SiMysql,
@@ -40,7 +40,8 @@ export default function Hero() {
     { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <FaReact />, name: "React" },
     { icon: <SiNextdotjs />, name: "Next.js" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <FaNodeJs />, name: "Node.js" },
+    { icon: <SiNestjs />, name: "NestJS" },
   ];
 
   const techs = [
@@ -161,6 +162,26 @@ export default function Hero() {
       title: "Full Stack Next.js · Drizzle ORM, Better Auth, AI SDK y TypeScript",
       subtitle: "Udemy · 2026",
     },
+    {
+      title:
+        "Node.js · Clean Architecture, DDD, WebHooks, WebSockets, Tareas Automáticas, Despliegues, TypeScript, Edge y Testing",
+      subtitle: "Udemy · 2026",
+    },
+    {
+      title:
+        "Nest · REST, TypeScript, WebSockets, Autenticación, Autorización, Docker, MongoDB, PostgreSQL y TypeORM",
+      subtitle: "Udemy · 2026",
+    },
+    {
+      title:
+        "OpenCode · TUI, Comandos, Skills, MCPs, Supabase, Worktrees, GitHub Actions, Automatizaciones, Agentes en Paralelo y SSD",
+      subtitle: "Udemy · 2026",
+    },
+    {
+      title:
+        "SQL Guía Práctica con PostgreSQL · Diseño, Diagrama Entidad-Relación, Triggers, Procedimientos, Funciones, CTE Recursivos y PL/pgSQL",
+      subtitle: "Udemy · 2026",
+    },
   ];
 
   const meetiImages = [
@@ -184,7 +205,7 @@ export default function Hero() {
   return (
     <>
       {/* Hero */}
-      <section className="mt-9 flex flex-col items-center gap-8 p-6 md:flex-row md:items-start md:gap-6">
+      <section className="mt-9 flex flex-col items-center gap-8 p-6 md:flex-row md:items-center md:gap-6">
         {/* Columna de foto */}
         <div className="flex w-full flex-col items-center gap-4 md:w-2/5">
           <div className="relative">
@@ -205,9 +226,9 @@ export default function Hero() {
 
           <a
             href="mailto:ariannaisabel795@gmail.com"
-            className="group mt-2 flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] md:text-base"
+            className="group mt-2 flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2] md:text-base"
           >
-            <HiOutlineMail className="text-base text-[#f40eb2] group-hover:text-white md:text-lg" />
+            <HiOutlineMail className="text-base text-[#f40eb2] md:text-lg" />
             <span className="break-all">ariannaisabel795@gmail.com</span>
           </a>
 
@@ -252,23 +273,24 @@ export default function Hero() {
           <div className="relative mt-4 w-full max-w-150 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-600 p-0.5">
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-600 opacity-70 blur-md" />
             <div className="relative w-full rounded-2xl bg-gray-900 p-6">
-              <p className="mb-1 text-justify text-lg leading-snug text-white md:text-xl">
-                Desarrolladora Full Stack con formación en Desarrollo de
-                Aplicaciones Web y experiencia práctica en el desarrollo de
-                aplicaciones con JavaScript, TypeScript, React, Next.js y
-                Node.js. He trabajado con APIs REST, autenticación, bases de
-                datos, gestión de estado, testing y diferentes arquitecturas,
-                desarrollando proyectos tanto frontend como full stack.
+              <p className="text-justify text-lg leading-snug text-white md:text-xl">
+                Desarrolladora Full Stack enfocada en la construcción de
+                aplicaciones web modernas, desde la arquitectura del backend
+                hasta la experiencia de usuario. Trabajo con React, Next.js,
+                TypeScript, Node.js y NestJS, integrando APIs, bases de datos y
+                sistemas de autenticación para desarrollar aplicaciones
+                completas. Me interesa especialmente la evolución del
+                desarrollo de software a través de la inteligencia artificial.
               </p>
             </div>
           </div>
 
           {/* Skills */}
-          <div className="mt-3 flex w-full max-w-150 flex-wrap gap-3">
+          <div className="mt-3 flex w-full gap-3">
             {skills.map((skill) => (
               <div
                 key={skill.name}
-                className="flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_10px_#f40eb2] md:text-base"
+                className="flex shrink-0 items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2] md:text-base"
               >
                 {skill.icon}
                 {skill.name}
@@ -277,9 +299,6 @@ export default function Hero() {
           </div>
         </div>
       </section>
-
-      {/* Separador neón */}
-      <div className="mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
 
       {/* Proyectos destacados */}
       <section className="px-5 py-16 md:px-10 lg:px-16">
@@ -325,7 +344,7 @@ export default function Hero() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm text-gray-200"
+                      className="rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2]"
                     >
                       {tag}
                     </span>
@@ -437,7 +456,7 @@ export default function Hero() {
                     {project.tags.map((tag) => (
                       <div
                         key={tag.name}
-                        className="flex items-center gap-1 rounded-full bg-white/70 px-3 py-1 text-sm transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_6px_#f40eb2]"
+                        className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2]"
                       >
                         {tag.icon}
                         {tag.name}
