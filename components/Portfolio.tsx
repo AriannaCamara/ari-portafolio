@@ -1,4 +1,5 @@
- 
+import type { ReactNode } from "react";
+
 import {
   FaReact,
   FaNodeJs,
@@ -28,180 +29,56 @@ import {
   SiVite,
 } from "react-icons/si";
 
-export const metadata = {
-  title: "Arianna Cámara | Desarrolladora Full Stack Junior",
-  description:
-    "Portfolio de Arianna Cámara, desarrolladora Full Stack especializada en JavaScript, TypeScript, React, Next.js y Node.js.",
+import type { Dictionary } from "@/app/[lang]/dictionaries";
+
+const skills = [
+  { icon: <FaJs />, name: "JavaScript" },
+  { icon: <SiTypescript />, name: "TypeScript" },
+  { icon: <FaReact />, name: "React" },
+  { icon: <SiNextdotjs />, name: "Next.js" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <SiNestjs />, name: "NestJS" },
+];
+
+const techs = [
+  { name: "HTML", icon: <FaHtml5 /> },
+  { name: "CSS", icon: <FaCss3Alt /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "Next.js", icon: <SiNextdotjs /> },
+  { name: "Node.js", icon: <FaNodeJs /> },
+  { name: "Express", icon: <SiExpress /> },
+  { name: "MySQL", icon: <SiMysql /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "Git", icon: <FaGitAlt /> },
+  { name: "Postman", icon: <SiPostman /> },
+  { name: "Vite", icon: <SiVite /> },
+];
+
+// Los nombres de tags son iguales en ambos idiomas, solo cambia el icono
+const tagIcons: Record<string, ReactNode> = {
+  React: <FaReact />,
+  JavaScript: <FaJs />,
+  HTML: <FaHtml5 />,
+  CSS: <FaCss3Alt />,
+  TypeScript: <SiTypescript />,
+  "REST API": <FaServer />,
 };
 
-export default function Hero() {
-  const skills = [
-    { icon: <FaJs />, name: "JavaScript" },
-    { icon: <SiTypescript />, name: "TypeScript" },
-    { icon: <FaReact />, name: "React" },
-    { icon: <SiNextdotjs />, name: "Next.js" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiNestjs />, name: "NestJS" },
-  ];
+const featuredTags = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "PostgreSQL",
+  "Drizzle ORM",
+  "Better Auth",
+  "Vercel AI SDK",
+  "Tailwind CSS",
+  "Pusher",
+];
 
-  const techs = [
-    { name: "HTML", icon: <FaHtml5 /> },
-    { name: "CSS", icon: <FaCss3Alt /> },
-    { name: "JavaScript", icon: <FaJs /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "React", icon: <FaReact /> },
-    { name: "Next.js", icon: <SiNextdotjs /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "Express", icon: <SiExpress /> },
-    { name: "MySQL", icon: <SiMysql /> },
-    { name: "MongoDB", icon: <SiMongodb /> },
-    { name: "Git", icon: <FaGitAlt /> },
-    { name: "Postman", icon: <SiPostman /> },
-    { name: "Vite", icon: <SiVite /> },
-  ];
-
-  const projects = [
-    {
-      title: "Seguimiento de Pacientes Veterinaria",
-      description:
-        "Aplicación web desarrollada con React para gestionar pacientes de una clínica veterinaria. Permite registrar, editar y consultar información de cada paciente mediante una interfaz dinámica e intuitiva.",
-      image: "/veterinaria.PNG",
-      tags: [
-        { name: "React", icon: <FaReact /> },
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-      ],
-      link: "https://poetic-nougat-72d01c.netlify.app/",
-    },
-    {
-      title: "Contador de Calorías",
-      description:
-        "Aplicación desarrollada con React y TypeScript para registrar alimentos, controlar la ingesta diaria y calcular las calorías consumidas. Incluye gestión de estado y una interfaz adaptada a distintos dispositivos.",
-      image: "/caloria.png",
-      tags: [
-        { name: "React", icon: <FaReact /> },
-        { name: "TypeScript", icon: <SiTypescript /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-      ],
-      link: "https://tubular-truffle-8b9813.netlify.app/",
-    },
-    {
-      title: "Cotizador de Criptomonedas",
-      description:
-        "Aplicación web que consume una API REST para consultar valores de criptomonedas en tiempo real y realizar conversiones entre diferentes monedas de forma dinámica.",
-      image: "/cotizador1.PNG",
-      tags: [
-        { name: "React", icon: <FaReact /> },
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-        { name: "REST API", icon: <FaServer /> },
-      ],
-      link: "https://criptomoneda-ari-codigoconjuan.netlify.app/",
-    },
-    {
-      title: "App CRUD",
-      description:
-        "Aplicación web desarrollada con JavaScript que permite gestionar usuarios mediante operaciones CRUD: crear, consultar, editar y eliminar registros. Incluye consumo de una API REST, manipulación del DOM y gestión dinámica de datos.",
-      image: "/App-CRUD.PNG",
-      tags: [
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "HTML", icon: <FaHtml5 /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-        { name: "REST API", icon: <FaServer /> },
-      ],
-      link: "https://app-crud-4p74.onrender.com/",
-    },
-    {
-      title: "Cotizador de Préstamos",
-      description:
-        "Aplicación web que permite calcular préstamos de forma dinámica según la cantidad solicitada y el plazo seleccionado, mostrando las cuotas y el importe total a pagar.",
-      image: "/cotizadoor.PNG",
-      tags: [
-        { name: "React", icon: <FaReact /> },
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-      ],
-      link: "https://cotizador-prestamos-react-codigoj.netlify.app/",
-    },
-    {
-      title: "Calculadora de Propinas y Consumos",
-      description:
-        "Aplicación web para seleccionar productos, calcular consumos y determinar automáticamente la propina y el importe total a pagar mediante una interfaz sencilla y dinámica.",
-      image: "/propinas.PNG",
-      tags: [
-        { name: "React", icon: <FaReact /> },
-        { name: "JavaScript", icon: <FaJs /> },
-        { name: "CSS", icon: <FaCss3Alt /> },
-      ],
-      link: "https://sage-cranachan-1183ee.netlify.app/",
-    },
-  ];
-
-  const studies = [
-    {
-      title: "FP Superior Desarrollo de Aplicaciones Web",
-      subtitle: "Universae · 2024-2025",
-    },
-    {
-      title: "Full Stack Node.js, React, TypeScript, NestJS y Next.js",
-      subtitle: "Udemy · 2025",
-    },
-    {
-      title: "React y TypeScript · Creando +10 Proyectos",
-      subtitle: "Udemy · 2025",
-    },
-    {
-      title: "Headless WordPress · Astro, WP REST API, Tailwind y TypeScript",
-      subtitle: "Udemy · 2025",
-    },
-    {
-      title: "CSS · Flexbox, CSS Grid, SASS y +20 proyectos",
-      subtitle: "Udemy · 2025",
-    },
-    {
-      title: "Full Stack Next.js · Drizzle ORM, Better Auth, AI SDK y TypeScript",
-      subtitle: "Udemy · 2026",
-    },
-    {
-      title:
-        "Node.js · Clean Architecture, DDD, WebHooks, WebSockets, Tareas Automáticas, Despliegues, TypeScript, Edge y Testing",
-      subtitle: "Udemy · 2026",
-    },
-    {
-      title:
-        "Nest · REST, TypeScript, WebSockets, Autenticación, Autorización, Docker, MongoDB, PostgreSQL y TypeORM",
-      subtitle: "Udemy · 2026",
-    },
-    {
-      title:
-        "OpenCode · TUI, Comandos, Skills, MCPs, Supabase, Worktrees, GitHub Actions, Automatizaciones, Agentes en Paralelo y SSD",
-      subtitle: "Udemy · 2026",
-    },
-    {
-      title:
-        "SQL Guía Práctica con PostgreSQL · Diseño, Diagrama Entidad-Relación, Triggers, Procedimientos, Funciones, CTE Recursivos y PL/pgSQL",
-      subtitle: "Udemy · 2026",
-    },
-  ];
-
-  const meetiImages = [
-    {
-      src: "/MeetiPerfil.PNG",
-      alt: "Pantalla principal de Meeti Next",
-      label: "Perfil en meetis",
-    },
-    {
-      src: "/meetiIA.PNG",
-      alt: "Asistente de inteligencia artificial de Meeti Next",
-      label: "Asistente con IA",
-    },
-    {
-      src: "/meetiMapa.PNG",
-      alt: "Mapa de eventos de Meeti Next",
-      label: "Eventos y mapas",
-    },
-  ];
-
+export default function Portfolio({ t }: { t: Dictionary }) {
   return (
     <>
       {/* Hero */}
@@ -213,7 +90,7 @@ export default function Hero() {
             <div className="rounded-full bg-gradient-to-r from-[#ff31ce] via-pink-500 to-purple-500 p-1">
               <img
                 src="/perfil.jpg"
-                alt="Foto de Arianna Cámara"
+                alt={t.hero.photoAlt}
                 className="relative z-10 h-48 w-48 rounded-full object-cover"
               />
             </div>
@@ -221,7 +98,7 @@ export default function Hero() {
 
           <div className="mt-2 flex items-center text-sm text-white md:text-base">
             <HiLocationMarker className="mr-1 text-[#f40eb2]" />
-            Madrid, España
+            {t.hero.location}
           </div>
 
           <a
@@ -237,7 +114,7 @@ export default function Hero() {
             <a
               href="/Curriculum.pdf"
               download="AriannaCamara_CV.pdf"
-              aria-label="Descargar curriculum"
+              aria-label={t.hero.downloadCv}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <HiOutlineDownload className="text-lg md:text-xl" />
@@ -246,7 +123,7 @@ export default function Hero() {
               href="https://www.linkedin.com/in/arianna-camara-65238a2a5"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn de Arianna Cámara"
+              aria-label={t.hero.linkedinLabel}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <FaLinkedinIn className="text-lg md:text-xl" />
@@ -255,7 +132,7 @@ export default function Hero() {
               href="https://github.com/AriannaCamara?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub de Arianna Cámara"
+              aria-label={t.hero.githubLabel}
               className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f40eb2] text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_10px_#f40eb2]"
             >
               <FaGithub className="text-lg md:text-xl" />
@@ -266,7 +143,9 @@ export default function Hero() {
         {/* Columna de texto */}
         <div className="flex w-full flex-col gap-6 md:w-3/5">
           <h1 className="mb-2 w-full text-4xl font-bold text-white md:text-5xl">
-            <span className="drop-shadow-[0_0_10px_#f40eb2]">Hola, soy</span>{" "}
+            <span className="drop-shadow-[0_0_10px_#f40eb2]">
+              {t.hero.greeting}
+            </span>{" "}
             <span className="text-5xl text-[#f40eb2] md:text-6xl">Arianna</span>
           </h1>
 
@@ -274,13 +153,7 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-600 opacity-70 blur-md" />
             <div className="relative w-full rounded-2xl bg-gray-900 p-6">
               <p className="text-justify text-lg leading-snug text-white md:text-xl">
-                Desarrolladora Full Stack enfocada en la construcción de
-                aplicaciones web modernas, desde la arquitectura del backend
-                hasta la experiencia de usuario. Trabajo con React, Next.js,
-                TypeScript, Node.js y NestJS, integrando APIs, bases de datos y
-                sistemas de autenticación para desarrollar aplicaciones
-                completas. Me interesa especialmente la evolución del
-                desarrollo de software a través de la inteligencia artificial.
+                {t.hero.intro}
               </p>
             </div>
           </div>
@@ -303,12 +176,10 @@ export default function Hero() {
       {/* Proyectos destacados */}
       <section className="px-5 py-16 md:px-10 lg:px-16">
         <h2 className="mb-4 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2] md:text-5xl">
-          Proyecto destacado
+          {t.featured.heading}
         </h2>
         <p className="mx-auto mb-12 max-w-3xl text-center text-base text-gray-300 md:text-lg">
-          Meeti Next · Una plataforma full stack para descubrir comunidades,
-          organizar eventos y conectar personas, con notificaciones en tiempo
-          real y un asistente de inteligencia artificial.
+          {t.featured.subtitle}
         </p>
 
         <div className="relative mx-auto max-w-6xl rounded-3xl bg-gradient-to-br from-[#f40eb2] via-purple-500 to-blue-500 p-0.5 transition-transform duration-500 hover:-translate-y-1">
@@ -317,31 +188,17 @@ export default function Hero() {
             <div className="grid items-center gap-8 p-5 md:p-8 lg:grid-cols-5 lg:p-10">
               <div className="lg:col-span-3">
                 <div className="mb-4 inline-flex rounded-full border border-pink-400/40 bg-pink-500/10 px-3 py-1 text-sm font-semibold text-pink-300">
-                  Full Stack · Proyecto principal
+                  {t.featured.badge}
                 </div>
                 <h3 className="mb-4 text-3xl font-bold text-white md:text-4xl">
                   Meeti <span className="text-[#f40eb2]">Next</span>
                 </h3>
                 <p className="mb-5 leading-relaxed text-gray-300">
-                  Aplicación full stack donde las personas pueden crear
-                  comunidades, publicar meetis, apuntarse a eventos y descubrir
-                  actividades presenciales o virtuales. Incluye autenticación
-                  completa, notificaciones en tiempo real y un asistente de IA
-                  capaz de ayudar a encontrar comunidades y eventos.
+                  {t.featured.description}
                 </p>
 
                 <div className="mb-6 flex flex-wrap gap-2">
-                  {[
-                    "Next.js",
-                    "React",
-                    "TypeScript",
-                    "PostgreSQL",
-                    "Drizzle ORM",
-                    "Better Auth",
-                    "Vercel AI SDK",
-                    "Tailwind CSS",
-                    "Pusher",
-                  ].map((tag) => (
+                  {featuredTags.map((tag) => (
                     <span
                       key={tag}
                       className="rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2]"
@@ -352,11 +209,9 @@ export default function Hero() {
                 </div>
 
                 <ul className="mb-7 space-y-2 text-sm leading-relaxed text-gray-300 md:text-base">
-                  <li>✦ Registro, verificación de email y gestión de sesiones.</li>
-                  <li>✦ Creación y gestión de comunidades y eventos.</li>
-                  <li>✦ Mapas, geolocalización y listado de asistentes.</li>
-                  <li>✦ Notificaciones en tiempo real y asistente de IA.</li>
-                  <li>✦ Arquitectura organizada por funcionalidades y validación con Zod.</li>
+                  {t.featured.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
                 </ul>
 
                 <div className="flex flex-wrap gap-3">
@@ -366,7 +221,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-full bg-[#f40eb2] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_14px_#f40eb2]"
                   >
-                    Ver demo ↗
+                    {t.featured.viewDemo}
                   </a>
                   <a
                     href="https://github.com/AriannaCamara/meeti-next"
@@ -374,7 +229,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-[#f40eb2] hover:text-[#f40eb2]"
                   >
-                    <FaGithub /> Ver código
+                    <FaGithub /> {t.featured.viewCode}
                   </a>
                 </div>
               </div>
@@ -383,15 +238,15 @@ export default function Hero() {
                 <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gray-900 shadow-2xl shadow-purple-950/40">
                   <img
                     src="/meeti.PNG"
-                    alt="Captura principal de Meeti Next"
+                    alt={t.featured.screenshotAlt}
                     className="aspect-[4/3] w-full object-cover object-top"
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-transparent p-5 pt-12">
                     <p className="text-lg font-semibold text-white">
-                      Comunidades que conectan
+                      {t.featured.cardTitle}
                     </p>
                     <p className="text-sm text-gray-300">
-                      Descubre, crea y participa en meetis.
+                      {t.featured.cardSubtitle}
                     </p>
                   </div>
                 </div>
@@ -400,7 +255,7 @@ export default function Hero() {
 
             {/* Galería de tres capturas */}
             <div className="grid grid-cols-1 gap-4 border-t border-white/10 p-5 md:grid-cols-3 md:p-8">
-              {meetiImages.map((image) => (
+              {t.featured.gallery.map((image) => (
                 <figure
                   key={image.src}
                   className="group overflow-hidden rounded-2xl border border-white/10 bg-gray-900 transition-all duration-300 hover:border-[#f40eb2]/70 hover:shadow-[0_0_18px_rgba(244,14,178,0.15)]"
@@ -425,13 +280,13 @@ export default function Hero() {
       {/* Otros proyectos */}
       <section className="px-8 py-16 md:px-16 lg:px-20">
         <h2 className="mb-12 w-full text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
-          Otros proyectos
+          {t.projects.heading}
         </h2>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {t.projects.items.map((project) => (
             <div
-              key={project.title}
+              key={project.link}
               className="group relative mx-auto max-w-sm rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 p-0.5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 opacity-60 blur-md" />
@@ -439,7 +294,10 @@ export default function Hero() {
                 <div className="h-64 w-full overflow-hidden">
                   <img
                     src={project.image}
-                    alt={`Captura del proyecto ${project.title}`}
+                    alt={t.projects.screenshotAlt.replace(
+                      "{title}",
+                      project.title,
+                    )}
                     className="h-full w-full rounded-t-2xl object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
@@ -455,11 +313,11 @@ export default function Hero() {
                   <div className="mb-3 flex flex-wrap justify-center gap-2">
                     {project.tags.map((tag) => (
                       <div
-                        key={tag.name}
+                        key={tag}
                         className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2]"
                       >
-                        {tag.icon}
-                        {tag.name}
+                        {tagIcons[tag]}
+                        {tag}
                       </div>
                     ))}
                   </div>
@@ -470,7 +328,7 @@ export default function Hero() {
                     rel="noopener noreferrer"
                     className="mt-auto w-full rounded-full bg-[#f40eb2] px-3 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_8px_#f40eb2]"
                   >
-                    Ver proyecto
+                    {t.projects.viewProject}
                   </a>
                 </div>
               </div>
@@ -485,7 +343,7 @@ export default function Hero() {
       {/* Tecnologías */}
       <section className="px-6 py-10">
         <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
-          Tecnologías
+          {t.technologies.heading}
         </h2>
 
         <div className="mb-6 flex flex-wrap justify-center gap-8">
@@ -516,16 +374,16 @@ export default function Hero() {
       {/* Formación */}
       <section className="px-6 py-16 md:px-12 lg:px-20">
         <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
-          Formación
+          {t.education.heading}
         </h2>
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-x-16 gap-y-10 lg:grid-cols-2">
-          {studies.map((estudio) => (
-            <div key={estudio.title} className="group">
+          {t.education.items.map((study) => (
+            <div key={study.title} className="group">
               <h3 className="text-xl font-semibold text-white transition-all duration-300 group-hover:text-[#f40eb2] group-hover:drop-shadow-[0_0_6px_#f40eb2]">
-                {estudio.title}
+                {study.title}
               </h3>
-              <p className="mt-1 text-gray-300">{estudio.subtitle}</p>
+              <p className="mt-1 text-gray-300">{study.subtitle}</p>
               <div className="mt-2 h-0.5 w-16 bg-[#f40eb2] shadow-[0_0_8px_#f40eb2]" />
             </div>
           ))}
