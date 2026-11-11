@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 import {
   FaReact,
   FaNodeJs,
@@ -9,7 +7,6 @@ import {
   FaHtml5,
   FaCss3Alt,
   FaGitAlt,
-  FaServer,
 } from "react-icons/fa";
 
 import {
@@ -57,15 +54,6 @@ const techs = [
 ];
 
 // Los nombres de tags son iguales en ambos idiomas, solo cambia el icono
-const tagIcons: Record<string, ReactNode> = {
-  React: <FaReact />,
-  JavaScript: <FaJs />,
-  HTML: <FaHtml5 />,
-  CSS: <FaCss3Alt />,
-  TypeScript: <SiTypescript />,
-  "REST API": <FaServer />,
-};
-
 const featuredTags = [
   "Next.js",
   "React",
@@ -81,8 +69,67 @@ const featuredTags = [
 export default function Portfolio({ t }: { t: Dictionary }) {
   return (
     <>
+      {/* Menú de navegación fijo */}
+      <nav className="fixed inset-x-0 top-0 z-40 border-b border-[#f40eb2]/40 bg-gray-950/85 backdrop-blur">
+        <div className="mx-auto flex h-14 max-w-6xl items-center gap-4 overflow-x-auto px-4 pr-24">
+          <span className="hidden shrink-0 text-sm font-bold text-white md:block">
+            Arianna <span className="text-[#f40eb2]">Cámara</span>
+          </span>
+          <ul className="flex items-center gap-4 whitespace-nowrap text-xs font-semibold text-gray-300 md:gap-6 md:text-sm">
+            <li>
+              <a
+                href="#featured"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.featured}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.about}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.projects}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#technologies"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.technologies}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#education"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.education}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className="transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_6px_#f40eb2]"
+              >
+                {t.nav.contact}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
       {/* Hero */}
-      <section className="mt-9 flex flex-col items-center gap-8 p-6 md:flex-row md:items-center md:gap-6">
+      <section className="flex flex-col items-center gap-8 p-6 pt-24 md:flex-row md:items-center md:gap-6">
         {/* Columna de foto */}
         <div className="flex w-full flex-col items-center gap-4 md:w-2/5">
           <div className="relative">
@@ -159,7 +206,7 @@ export default function Portfolio({ t }: { t: Dictionary }) {
           </div>
 
           {/* Skills */}
-          <div className="mt-3 flex w-full gap-3">
+          <div className="mt-3 flex w-full flex-wrap gap-3">
             {skills.map((skill) => (
               <div
                 key={skill.name}
@@ -174,7 +221,10 @@ export default function Portfolio({ t }: { t: Dictionary }) {
       </section>
 
       {/* Proyectos destacados */}
-      <section className="px-5 py-16 md:px-10 lg:px-16">
+      <section
+        id="featured"
+        className="scroll-mt-16 px-5 py-16 md:px-10 lg:px-16"
+      >
         <h2 className="mb-4 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2] md:text-5xl">
           {t.featured.heading}
         </h2>
@@ -277,63 +327,75 @@ export default function Portfolio({ t }: { t: Dictionary }) {
         </div>
       </section>
 
+      {/* Sobre mí */}
+      <section id="about" className="scroll-mt-16 px-6 py-16 md:px-12 lg:px-20">
+        <h2 className="mb-10 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2] md:text-5xl">
+          {t.about.heading}
+        </h2>
+
+        <div className="mx-auto max-w-4xl rounded-3xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 p-0.5">
+          <div className="rounded-3xl bg-gray-950 p-6 md:p-10">
+            {t.about.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mb-5 text-base leading-relaxed text-gray-300 md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
+
+            <p className="mb-8 inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] md:text-base">
+              {t.about.availability}
+            </p>
+
+            <h3 className="mb-4 text-xl font-semibold text-white md:text-2xl">
+              {t.about.skillsHeading}
+            </h3>
+            <div className="flex flex-wrap gap-3">
+              {skills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2] md:text-base"
+                >
+                  {skill.icon}
+                  {skill.name}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Otros proyectos */}
-      <section className="px-8 py-16 md:px-16 lg:px-20">
+      <section
+        id="projects"
+        className="scroll-mt-16 px-8 py-16 md:px-16 lg:px-20"
+      >
         <h2 className="mb-12 w-full text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
           {t.projects.heading}
         </h2>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {t.projects.items.map((project) => (
-            <div
-              key={project.link}
-              className="group relative mx-auto max-w-sm rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 p-0.5 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02]"
-            >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 opacity-60 blur-md" />
-              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl bg-gray-900">
-                <div className="h-64 w-full overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={t.projects.screenshotAlt.replace(
-                      "{title}",
-                      project.title,
-                    )}
-                    className="h-full w-full rounded-t-2xl object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-
-                <div className="flex flex-1 flex-col p-4">
-                  <h3 className="mb-2 text-center text-lg font-semibold text-[#f40eb2]">
-                    {project.title}
-                  </h3>
-                  <p className="mb-3 line-clamp-4 text-center text-sm leading-tight text-white">
-                    {project.description}
-                  </p>
-
-                  <div className="mb-3 flex flex-wrap justify-center gap-2">
-                    {project.tags.map((tag) => (
-                      <div
-                        key={tag}
-                        className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm text-[#f40eb2] shadow-[0_0_8px_rgba(244,14,178,0.45)] transition-all duration-300 hover:shadow-[0_0_15px_#f40eb2,0_0_30px_#f40eb2]"
-                      >
-                        {tagIcons[tag]}
-                        {tag}
-                      </div>
-                    ))}
-                  </div>
-
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto w-full rounded-full bg-[#f40eb2] px-3 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_8px_#f40eb2]"
-                  >
-                    {t.projects.viewProject}
-                  </a>
-                </div>
-              </div>
+        <div className="relative mx-auto max-w-2xl rounded-3xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 p-0.5 transition-transform duration-500 hover:-translate-y-1">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 opacity-60 blur-xl" />
+          <div className="relative flex flex-col items-center rounded-3xl bg-gray-950 p-8 text-center md:p-10">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#f40eb2] text-3xl text-white shadow-[0_0_15px_#f40eb2]">
+              <FaGithub />
             </div>
-          ))}
+            <h3 className="mb-3 text-2xl font-bold text-white md:text-3xl">
+              {t.projects.ctaTitle}
+            </h3>
+            <p className="mb-7 max-w-xl leading-relaxed text-gray-300">
+              {t.projects.ctaDescription}
+            </p>
+            <a
+              href={t.projects.ctaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[#f40eb2] px-8 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_14px_#f40eb2]"
+            >
+              {t.projects.ctaButton}
+            </a>
+          </div>
         </div>
       </section>
 
@@ -341,7 +403,7 @@ export default function Portfolio({ t }: { t: Dictionary }) {
       <div className="mb-6 mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
 
       {/* Tecnologías */}
-      <section className="px-6 py-10">
+      <section id="technologies" className="scroll-mt-16 px-6 py-10">
         <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
           {t.technologies.heading}
         </h2>
@@ -372,7 +434,10 @@ export default function Portfolio({ t }: { t: Dictionary }) {
       </section>
 
       {/* Formación */}
-      <section className="px-6 py-16 md:px-12 lg:px-20">
+      <section
+        id="education"
+        className="scroll-mt-16 px-6 py-16 md:px-12 lg:px-20"
+      >
         <h2 className="mb-16 text-center text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2]">
           {t.education.heading}
         </h2>
@@ -390,8 +455,93 @@ export default function Portfolio({ t }: { t: Dictionary }) {
         </div>
       </section>
 
-      {/* Separador final */}
-      <div className="mb-0 mt-6 h-1 w-full rounded-full bg-gradient-to-r from-[#f40eb2] via-pink-500 to-purple-500 shadow-[0_0_10px_#f40eb2,0_0_20px_#f40eb2,0_0_30px_#f40eb2]" />
+      {/* Contacto */}
+      <section
+        id="contact"
+        className="scroll-mt-16 px-6 pb-16 md:px-12 lg:px-20"
+      >
+        <div className="relative mx-auto max-w-4xl rounded-3xl bg-gradient-to-br from-[#f40eb2] via-purple-500 to-blue-500 p-0.5">
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#f40eb2] via-purple-500 to-blue-500 opacity-50 blur-xl" />
+          <div className="relative rounded-3xl bg-gray-950 p-8 text-center md:p-12">
+            <h2 className="mb-4 text-4xl font-bold text-white drop-shadow-[0_0_10px_#f40eb2] md:text-5xl">
+              {t.contact.heading}
+            </h2>
+            <p className="mx-auto mb-9 max-w-2xl leading-relaxed text-gray-300 md:text-lg">
+              {t.contact.subtitle}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="mailto:ariannaisabel795@gmail.com"
+                className="inline-flex items-center gap-2 rounded-full bg-[#f40eb2] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-white hover:text-[#f40eb2] hover:shadow-[0_0_14px_#f40eb2]"
+              >
+                <HiOutlineMail /> {t.contact.emailLabel}
+              </a>
+              <a
+                href="https://www.linkedin.com/in/arianna-camara-65238a2a5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-[#f40eb2] hover:text-[#f40eb2]"
+              >
+                <FaLinkedinIn /> {t.contact.linkedinLabel}
+              </a>
+              <a
+                href="https://github.com/AriannaCamara"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-[#f40eb2] hover:text-[#f40eb2]"
+              >
+                <FaGithub /> {t.contact.githubLabel}
+              </a>
+              <a
+                href="/Curriculum.pdf"
+                download="AriannaCamara_CV.pdf"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-[#f40eb2] hover:text-[#f40eb2]"
+              >
+                <HiOutlineDownload /> {t.contact.cvLabel}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="mt-auto border-t border-[#f40eb2]/40 bg-gray-950 py-7">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 text-center text-sm text-gray-400 md:flex-row md:justify-between md:text-left">
+          <p>
+            © {new Date().getFullYear()} Arianna Cámara ·{" "}
+            <span className="text-[#f40eb2]">Desarrolladora Full Stack</span>
+          </p>
+          <div className="flex items-center gap-5">
+            <a
+              href="https://www.linkedin.com/in/arianna-camara-65238a2a5"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.hero.linkedinLabel}
+              className="text-gray-400 transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_8px_#f40eb2]"
+            >
+              <FaLinkedinIn className="text-lg" />
+            </a>
+            <a
+              href="https://github.com/AriannaCamara"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.hero.githubLabel}
+              className="text-gray-400 transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_8px_#f40eb2]"
+            >
+              <FaGithub className="text-lg" />
+            </a>
+            <a
+              href="/Curriculum.pdf"
+              download="AriannaCamara_CV.pdf"
+              aria-label={t.hero.downloadCv}
+              className="text-gray-400 transition-all duration-300 hover:text-[#f40eb2] hover:drop-shadow-[0_0_8px_#f40eb2]"
+            >
+              <HiOutlineDownload className="text-lg" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

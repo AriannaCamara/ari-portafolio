@@ -7,6 +7,14 @@ export const en: Dictionary = {
     description:
       "Portfolio of Arianna Cámara, Full Stack developer specialized in JavaScript, TypeScript, React, Next.js and Node.js.",
   },
+  nav: {
+    about: "About",
+    featured: "Featured",
+    projects: "Projects",
+    technologies: "Tech stack",
+    education: "Education",
+    contact: "Contact",
+  },
   hero: {
     photoAlt: "Photo of Arianna Cámara",
     location: "Madrid, Spain",
@@ -15,7 +23,7 @@ export const en: Dictionary = {
     githubLabel: "Arianna Cámara's GitHub",
     greeting: "Hi, I'm",
     intro:
-      "Full Stack developer focused on building modern web applications, from backend architecture to user experience. I work with React, Next.js, TypeScript, Node.js and NestJS, integrating APIs, databases and authentication systems to build complete applications. I am especially interested in the evolution of software development through artificial intelligence.",
+      "Full Stack developer focused on building modern web applications, from backend architecture to user experience. I work with React, Next.js, TypeScript, Node.js and NestJS, integrating APIs, databases and authentication systems to build complete applications.",
   },
   featured: {
     heading: "Featured project",
@@ -54,60 +62,22 @@ export const en: Dictionary = {
       },
     ],
   },
+  about: {
+    heading: "About me",
+    paragraphs: [
+      "I'm Arianna, a Full Stack developer with an official degree in Web Application Development. I enjoy building complete applications: from the API and database to the interface the end user interacts with.",
+      "I'm especially interested in integrating artificial intelligence into real products and working as a team with good practices: typed code, validation, tests and automated deployments.",
+    ],
+    availability: "Open to junior opportunities in Madrid or remote.",
+    skillsHeading: "What I work with daily",
+  },
   projects: {
     heading: "Other projects",
-    screenshotAlt: "Screenshot of the {title} project",
-    viewProject: "View project",
-    items: [
-      {
-        title: "Veterinary Patient Tracking",
-        description:
-          "Web application developed with React to manage patients at a veterinary clinic. It allows registering, editing and viewing each patient's information through a dynamic and intuitive interface.",
-        image: "/veterinaria.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://poetic-nougat-72d01c.netlify.app/",
-      },
-      {
-        title: "Calorie Counter",
-        description:
-          "Application developed with React and TypeScript to log food, track daily intake and calculate consumed calories. Includes state management and an interface adapted to different devices.",
-        image: "/caloria.png",
-        tags: ["React", "TypeScript", "CSS"],
-        link: "https://tubular-truffle-8b9813.netlify.app/",
-      },
-      {
-        title: "Cryptocurrency Price Tracker",
-        description:
-          "Web application that consumes a REST API to fetch cryptocurrency values in real time and perform conversions between different currencies dynamically.",
-        image: "/cotizador1.PNG",
-        tags: ["React", "JavaScript", "CSS", "REST API"],
-        link: "https://criptomoneda-ari-codigoconjuan.netlify.app/",
-      },
-      {
-        title: "CRUD App",
-        description:
-          "Web application developed with JavaScript that manages users through CRUD operations: create, read, edit and delete records. Includes consuming a REST API, DOM manipulation and dynamic data management.",
-        image: "/App-CRUD.PNG",
-        tags: ["JavaScript", "HTML", "CSS", "REST API"],
-        link: "https://app-crud-4p74.onrender.com/",
-      },
-      {
-        title: "Loan Calculator",
-        description:
-          "Web application that dynamically calculates loans based on the requested amount and the selected term, showing the installments and the total amount to pay.",
-        image: "/cotizadoor.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://cotizador-prestamos-react-codigoj.netlify.app/",
-      },
-      {
-        title: "Tip and Bill Calculator",
-        description:
-          "Web application to select products, calculate orders and automatically determine the tip and the total amount to pay through a simple and dynamic interface.",
-        image: "/propinas.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://sage-cranachan-1183ee.netlify.app/",
-      },
-    ],
+    ctaTitle: "Want to see the rest?",
+    ctaDescription:
+      "There are more projects on my GitHub: from NestJS and Express APIs to React applications with TypeScript.",
+    ctaButton: "View GitHub ↗",
+    ctaLink: "https://github.com/AriannaCamara?tab=repositories",
   },
   technologies: {
     heading: "Technologies",
@@ -120,45 +90,22 @@ export const en: Dictionary = {
         subtitle: "Universae · 2024-2025",
       },
       {
-        title: "Full Stack Node.js, React, TypeScript, NestJS and Next.js",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "React and TypeScript · Building +10 Projects",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "Headless WordPress · Astro, WP REST API, Tailwind and TypeScript",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "CSS · Flexbox, CSS Grid, SASS and +20 projects",
-        subtitle: "Udemy · 2025",
-      },
-      {
         title: "Full Stack Next.js · Drizzle ORM, Better Auth, AI SDK and TypeScript",
         subtitle: "Udemy · 2026",
       },
       {
-        title:
-          "Node.js · Clean Architecture, DDD, WebHooks, WebSockets, Automated Tasks, Deployments, TypeScript, Edge and Testing",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "Nest · REST, TypeScript, WebSockets, Authentication, Authorization, Docker, MongoDB, PostgreSQL and TypeORM",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "OpenCode · TUI, Commands, Skills, MCPs, Supabase, Worktrees, GitHub Actions, Automations, Parallel Agents and SSD",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "Practical SQL Guide with PostgreSQL · Design, Entity-Relationship Diagrams, Triggers, Stored Procedures, Functions, Recursive CTEs and PL/pgSQL",
+        title: "NestJS Scalable Backend · REST, WebSockets, Auth, Docker and TypeORM",
         subtitle: "Udemy · 2026",
       },
     ],
+  },
+  contact: {
+    heading: "Let's talk?",
+    subtitle:
+      "I'm looking for my first role as a developer. If you think I'd fit your team, drop me a line.",
+    emailLabel: "Email",
+    linkedinLabel: "LinkedIn",
+    githubLabel: "GitHub",
+    cvLabel: "Download CV",
   },
 };

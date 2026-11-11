@@ -5,6 +5,14 @@ export const es = {
     description:
       "Portfolio de Arianna Cámara, desarrolladora Full Stack especializada en JavaScript, TypeScript, React, Next.js y Node.js.",
   },
+  nav: {
+    about: "Sobre mí",
+    featured: "Proyecto destacado",
+    projects: "Proyectos",
+    technologies: "Tecnologías",
+    education: "Formación",
+    contact: "Contacto",
+  },
   hero: {
     photoAlt: "Foto de Arianna Cámara",
     location: "Madrid, España",
@@ -13,7 +21,7 @@ export const es = {
     githubLabel: "GitHub de Arianna Cámara",
     greeting: "Hola, soy",
     intro:
-      "Desarrolladora Full Stack enfocada en la construcción de aplicaciones web modernas, desde la arquitectura del backend hasta la experiencia de usuario. Trabajo con React, Next.js, TypeScript, Node.js y NestJS, integrando APIs, bases de datos y sistemas de autenticación para desarrollar aplicaciones completas. Me interesa especialmente la evolución del desarrollo de software a través de la inteligencia artificial.",
+      "Desarrolladora Full Stack enfocada en la construcción de aplicaciones web modernas, desde la arquitectura del backend hasta la experiencia de usuario. Trabajo con React, Next.js, TypeScript, Node.js y NestJS, integrando APIs, bases de datos y sistemas de autenticación para desarrollar aplicaciones completas.",
   },
   featured: {
     heading: "Proyecto destacado",
@@ -52,60 +60,22 @@ export const es = {
       },
     ],
   },
+  about: {
+    heading: "Sobre mí",
+    paragraphs: [
+      "Soy Arianna, desarrolladora Full Stack con formación oficial en Desarrollo de Aplicaciones Web. Disfruto construyendo aplicaciones completas: desde la API y la base de datos hasta la interfaz que usa la persona final.",
+      "Me interesa especialmente la integración de inteligencia artificial en productos reales y trabajar en equipo con buenas prácticas: código tipado, validación, tests y despliegues automatizados.",
+    ],
+    availability: "Abierta a oportunidades junior en Madrid o en remoto.",
+    skillsHeading: "Con las que trabajo a diario",
+  },
   projects: {
     heading: "Otros proyectos",
-    screenshotAlt: "Captura del proyecto {title}",
-    viewProject: "Ver proyecto",
-    items: [
-      {
-        title: "Seguimiento de Pacientes Veterinaria",
-        description:
-          "Aplicación web desarrollada con React para gestionar pacientes de una clínica veterinaria. Permite registrar, editar y consultar información de cada paciente mediante una interfaz dinámica e intuitiva.",
-        image: "/veterinaria.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://poetic-nougat-72d01c.netlify.app/",
-      },
-      {
-        title: "Contador de Calorías",
-        description:
-          "Aplicación desarrollada con React y TypeScript para registrar alimentos, controlar la ingesta diaria y calcular las calorías consumidas. Incluye gestión de estado y una interfaz adaptada a distintos dispositivos.",
-        image: "/caloria.png",
-        tags: ["React", "TypeScript", "CSS"],
-        link: "https://tubular-truffle-8b9813.netlify.app/",
-      },
-      {
-        title: "Cotizador de Criptomonedas",
-        description:
-          "Aplicación web que consume una API REST para consultar valores de criptomonedas en tiempo real y realizar conversiones entre diferentes monedas de forma dinámica.",
-        image: "/cotizador1.PNG",
-        tags: ["React", "JavaScript", "CSS", "REST API"],
-        link: "https://criptomoneda-ari-codigoconjuan.netlify.app/",
-      },
-      {
-        title: "App CRUD",
-        description:
-          "Aplicación web desarrollada con JavaScript que permite gestionar usuarios mediante operaciones CRUD: crear, consultar, editar y eliminar registros. Incluye consumo de una API REST, manipulación del DOM y gestión dinámica de datos.",
-        image: "/App-CRUD.PNG",
-        tags: ["JavaScript", "HTML", "CSS", "REST API"],
-        link: "https://app-crud-4p74.onrender.com/",
-      },
-      {
-        title: "Cotizador de Préstamos",
-        description:
-          "Aplicación web que permite calcular préstamos de forma dinámica según la cantidad solicitada y el plazo seleccionado, mostrando las cuotas y el importe total a pagar.",
-        image: "/cotizadoor.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://cotizador-prestamos-react-codigoj.netlify.app/",
-      },
-      {
-        title: "Calculadora de Propinas y Consumos",
-        description:
-          "Aplicación web para seleccionar productos, calcular consumos y determinar automáticamente la propina y el importe total a pagar mediante una interfaz sencilla y dinámica.",
-        image: "/propinas.PNG",
-        tags: ["React", "JavaScript", "CSS"],
-        link: "https://sage-cranachan-1183ee.netlify.app/",
-      },
-    ],
+    ctaTitle: "¿Quieres ver el resto?",
+    ctaDescription:
+      "Hay más proyectos en mi GitHub: desde APIs en NestJS y Express hasta aplicaciones React con TypeScript.",
+    ctaButton: "Ver GitHub ↗",
+    ctaLink: "https://github.com/AriannaCamara?tab=repositories",
   },
   technologies: {
     heading: "Tecnologías",
@@ -118,46 +88,23 @@ export const es = {
         subtitle: "Universae · 2024-2025",
       },
       {
-        title: "Full Stack Node.js, React, TypeScript, NestJS y Next.js",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "React y TypeScript · Creando +10 Proyectos",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "Headless WordPress · Astro, WP REST API, Tailwind y TypeScript",
-        subtitle: "Udemy · 2025",
-      },
-      {
-        title: "CSS · Flexbox, CSS Grid, SASS y +20 proyectos",
-        subtitle: "Udemy · 2025",
-      },
-      {
         title: "Full Stack Next.js · Drizzle ORM, Better Auth, AI SDK y TypeScript",
         subtitle: "Udemy · 2026",
       },
       {
-        title:
-          "Node.js · Clean Architecture, DDD, WebHooks, WebSockets, Tareas Automáticas, Despliegues, TypeScript, Edge y Testing",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "Nest · REST, TypeScript, WebSockets, Autenticación, Autorización, Docker, MongoDB, PostgreSQL y TypeORM",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "OpenCode · TUI, Comandos, Skills, MCPs, Supabase, Worktrees, GitHub Actions, Automatizaciones, Agentes en Paralelo y SSD",
-        subtitle: "Udemy · 2026",
-      },
-      {
-        title:
-          "SQL Guía Práctica con PostgreSQL · Diseño, Diagrama Entidad-Relación, Triggers, Procedimientos, Funciones, CTE Recursivos y PL/pgSQL",
+        title: "NestJS Backend Escalable · REST, WebSockets, Auth, Docker y TypeORM",
         subtitle: "Udemy · 2026",
       },
     ],
+  },
+  contact: {
+    heading: "¿Hablamos?",
+    subtitle:
+      "Estoy buscando mi primer puesto como desarrolladora. Si crees que encajo en tu equipo, escríbeme.",
+    emailLabel: "Email",
+    linkedinLabel: "LinkedIn",
+    githubLabel: "GitHub",
+    cvLabel: "Descargar CV",
   },
 };
 

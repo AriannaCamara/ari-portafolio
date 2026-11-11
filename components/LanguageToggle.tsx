@@ -22,7 +22,7 @@ export default function LanguageToggle({ lang }: { lang: Locale }) {
       href={option.href}
       scroll={false}
       aria-label={option.ariaLabel}
-      className="fixed right-4 top-4 z-50 flex items-center gap-2 rounded-full border border-[#f40eb2]/60 bg-gray-950/90 px-4 py-2 text-sm font-semibold text-[#f40eb2] shadow-[0_0_10px_rgba(244,14,178,0.45)] backdrop-blur transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_15px_#f40eb2]"
+      className="fixed right-4 top-2.5 z-50 flex items-center gap-2 rounded-full border border-[#f40eb2]/60 bg-gray-950/90 px-4 py-2 text-sm font-semibold text-[#f40eb2] shadow-[0_0_10px_rgba(244,14,178,0.45)] backdrop-blur transition-all duration-300 hover:bg-[#f40eb2] hover:text-white hover:shadow-[0_0_15px_#f40eb2]"
     >
       <FaGlobe aria-hidden="true" />
       {option.label}
